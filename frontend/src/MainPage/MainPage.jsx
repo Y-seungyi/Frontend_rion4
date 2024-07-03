@@ -10,41 +10,22 @@ const MainPage = () => {
   const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const response = await axios.get(
-    //       `http://${process.env.REACT_APP_IP}/api/v1/board/list`,
-    //       {
-    //         params: { page },
-    //       }
-    //     );
-    //     setList(response.data.content);
-    //     setTotalPages(response.data.pageable.totalPages);
-    //   } catch (error) {
-    //     console.error("Error fetching data:", error);
-    //   }
-    // };
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://54.180.145.34:8080/api/v1/board/list`,
+          {
+            params: { page, size: 10 },
+          }
+        );
+        setList(response.data.content);
+        setTotalPages(response.data.pageable.totalPages);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
 
-    // fetchData();
-
-    setList([
-      {
-        boardId: 1,
-        title: "제목 입니다",
-        writer: "작성자A",
-        view: 20,
-        like: 1,
-        createdAt: "2024-07-03T12:34:56Z",
-      },
-      {
-        boardId: 2,
-        title: "또 다른 제목",
-        writer: "작성자B",
-        view: 15,
-        like: 3,
-        createdAt: "2024-07-03T13:00:00Z",
-      },
-    ]);
+    fetchData();
   }, [page]);
 
   const handlePageChange = (newPage) => {
@@ -57,7 +38,7 @@ const MainPage = () => {
 
   return (
     <div className="board-container">
-        <h1>멋쟁이 사자처럼 게시판</h1>
+      <h1>멋쟁이 사자처럼 게시판</h1>
 
       {list.length > 0 ? (
         <>
