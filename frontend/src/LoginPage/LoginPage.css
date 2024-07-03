@@ -1,0 +1,90 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.Logininput {
+  padding-left: 10px;
+  width: 30rem;
+  height: 3rem;
+  text-align: left;
+  margin-top: 10px;
+  border-radius: 0;
+  border-width: 0 0 2px;
+}
+
+.errormessage {
+  color: red;
+  text-align: left;
+}
+.logintitle {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #213547;
+}
+.flexbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginbtn {
+  border-color: black;
+  padding: 0.6em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: white;
+  margin-top: 3rem;
+  border-radius: 4rem;
+  border-width: 1.6px;
+  font-weight: bold;
+}
+.loginbtn:hover {
+  color: rgb(135, 235, 170);
+  border-color: rgb(135, 235, 170);
+}
+
+.registerbtn1 {
+  margin-top: 1rem;
+  width: 240px;
+  margin-right: 3px;
+  border-radius: 4rem;
+  border-width: 1.6px;
+  font-weight: bold;
+  border-color: black;
+  padding: 0.6em;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: white;
+}
+.registerbtn1:hover {
+  color: rgb(135, 235, 170);
+  border-color: rgb(135, 235, 170);
+}
+
+.registerbtn2 {
+  margin-top: 1rem;
+  width: 240px;
+  margin-left: 3px;
+  border-radius: 4rem;
+  border-width: 1.7px;
+  font-weight: bold;
+  border-color: black;
+  padding: 0.6em;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: white;
+}
+.registerbtn2:hover {
+  color: rgb(135, 235, 170);
+  border-color: rgb(135, 235, 170);
+}
