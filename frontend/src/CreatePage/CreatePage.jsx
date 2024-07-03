@@ -1,25 +1,52 @@
 import axios from "axios";
 import { useRef, useState, useEffect } from "react";
 import { marked } from "marked";
+import { IoClose } from "react-icons/io5";
 import "./CreatePage.css";
 import Nav from "../components/Nav.jsx";
+
+const ErrorPopup = ({ visible, setVisible }) => {
+	
+	if (!visible) {
+		return null;
+	}
+
+	const closeErrorPopup = () => {
+		setVisible(false);
+	}
+	
+	return (
+		<div className="errorBack">
+			<div className="errorPopup">
+				<IoClose className="errorClose" onClick={closeErrorPopup} />
+				<div className="errorMessage">작성 실패</div>
+			</div>
+		</div>
+	);
+}
 
 const Create = () => {
 	const titleInput = useRef();
 	const contentInput = useRef();
 	const [inputData, setInputData] = useState(["", ""]);
 	const [markdownToHtml, setMarkdownToHtml] = useState("");
+	const [errorPopup, setErrorPopup] = useState(false); 
 
 	const sendPost = async () => {
-		const { resPost } = await axios.post(
-			`http://54.180.145.34:8080/api/v1/board`,
-			{
-				"title": inputData[0],
-				"content": inputData[1],
-			}
-		);
-
-		return resPost.data;
+		try {
+			const resPost = await axios.post(
+				`http://54.180.145.34:8080/api/v1/board`,
+				{
+					"title": inputData[0],
+					"content": inputData[1],
+				}
+			);
+	
+			return resPost.data;
+		} catch (err) {
+			console.log(err);
+			setErrorPopup(true);
+		}
 	};
 
 	useEffect(() => {
@@ -53,6 +80,7 @@ const Create = () => {
 				className="previewContent"
 				dangerouslySetInnerHTML={{ __html: markdownToHtml }}
 			></div>
+			<ErrorPopup visible={errorPopup} setVisible={setErrorPopup} />
 		</>
 	);
 };
