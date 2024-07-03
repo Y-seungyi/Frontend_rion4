@@ -1,5 +1,5 @@
 .loginbox {
-  max-width: 1280px;
+  max-width: 540px;
   margin: 0 auto;
   padding: 2rem;
   min-height: 100vh;
@@ -11,7 +11,7 @@
   width: 30rem;
   height: 3rem;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 30px;
   border-radius: 0;
   border-width: 0 0 2px;
 }
@@ -51,7 +51,7 @@
 
 .registerbtn1 {
   margin-top: 1rem;
-  width: 240px;
+  width: 220px;
   margin-right: 3px;
   border-radius: 4rem;
   border-width: 1.6px;
@@ -71,7 +71,7 @@
 
 .registerbtn2 {
   margin-top: 1rem;
-  width: 240px;
+  width: 220px;
   margin-left: 3px;
   border-radius: 4rem;
   border-width: 1.7px;
