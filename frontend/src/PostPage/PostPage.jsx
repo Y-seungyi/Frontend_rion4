@@ -32,27 +32,18 @@ const Post = () => {
 			createdAt: "0000-00-00T00:00:00Z",
 		};
 		try {
-			const { postRes } = await axios.get(
+			const postRes = await axios.get(
 				`http://54.180.145.34:8080/api/v1/board/${params.postId}`
-			);
-			// const postRes = {
-			// 	"data": {
-			// 		"boardId" : 1,
-			// 		"title" : "제목 입니다",
-			// 		"content" : "# 내용 입니다",
-			// 		"writer" : "작성자A",
-			// 		"view" : 20,
-			// 		"like" : 1,
-			// 		"createdAt": "2024-07-03T12:34:56Z"
-			// 	}	
-			// }
+			)
 
 			if (!postRes) {
 				setPost(noPost);
 				return noPost;
 			}
+			setPost(postRes.data)
 			return postRes.data;
-		} catch {
+		} catch (err) {
+			console.log(err);
 			return noPost;
 		}
 	};
@@ -71,12 +62,12 @@ const Post = () => {
 	};
 	const deletePost = () => {
 		axios.delete(
-			`http://${process.env.REACT_APP_IP}/api/v1/board/${params.boardId}`
+			`http://54.180.145.34:8080/api/v1/board/${params.boardId}`
 		);
 	};
 	const likePost = () => {
 		axios.post(
-			`http://${process.env.REACT_APP_IP}/api/v1/like/${params.boardId}`
+			`http://54.180.145.34:8080/api/v1/like/${params.boardId}`
 		);
 	};
 

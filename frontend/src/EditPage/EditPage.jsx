@@ -13,7 +13,7 @@ const Edit = () => {
 	const params = useParams();
 
 	const getPost = async () => {
-		const { postRes } = await axios.get(
+		const postRes = await axios.get(
 			`http://54.180.145.34:8080/api/v1/board/${params.boardId}`
 		);
 		// const postRes = {
