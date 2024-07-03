@@ -3,6 +3,8 @@ import MainPage from "./MainPage/MainPage";
 import PostPage from "./PostPage/PostPage";
 import CreatePage from "./CreatePage/CreatePage";
 import EditPage from "./EditPage/EditPage";
+import RegisterPage from "./RegisterPage/RegisterPage";
+import LoginPage from "./LoginPage/LoginPage";
 
 const App = () => {
   return (
@@ -11,8 +13,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/post/:postId" element={<PostPage />} />
-					<Route path="/create" element={<CreatePage />} />
-					<Route path="/edit" element={<EditPage />} />
+          <Route path="/create" element={<CreatePage />} />
+          <Route path="/edit" element={<EditPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/rogin" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </>
