@@ -1,21 +1,12 @@
-.backbtncontainer {
+.register {
   position: relative;
-  max-width: 1280px;
+  width: 33%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   background-color: rgb(255, 255, 255);
 }
-#root::before,
-#root::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50vw;
-  background-color: rgba(120, 229, 156, 0.681);
-  z-index: -1;
-}
+
 #root::before {
   left: -50vw;
 }
@@ -24,21 +15,24 @@
 }
 
 .Registerinput {
+  justify-content: center;
   padding-left: 10px;
   width: 30rem;
   height: 3rem;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 30px;
   border-radius: 0;
   border-width: 0 0 2px;
 }
 
 .registertitle {
+  margin: 30px 0 50px 0;
   font-size: 3.2em;
   line-height: 1.1;
   color: #213547;
 }
 .flexbox {
+  justify-content: center;
   display: flex;
   flex-direction: column;
 }
@@ -81,8 +75,8 @@
 }
 
 .registerbtn {
+  margin-top: 190px;
   border-radius: 4rem;
-  margin-top: 3rem;
   font-weight: bold;
   border-width: 1.6px;
   border-color: black;
@@ -97,6 +91,7 @@
   color: rgb(135, 235, 170);
   border-color: rgb(135, 235, 170);
 }
+
 
 .trueEmail {
   padding-left: 10px;

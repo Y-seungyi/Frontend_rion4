@@ -44,56 +44,60 @@ function RegisterPage() {
 
   return (
     <>
-      <div className="backbtncontainer">
-        <SlArrowLeft />
-        <Link to="/Login">
-          <button className="backbtn">뒤로가기</button>
-        </Link>
-      </div>
-      <h1 className="registertitle">회원가입</h1>
-      <div className="flexbox">
-        <input
-          type="email"
-          value={email}
-          placeholder="이메일(아이디)"
-          onChange={(e) => setEmail(e.target.value)}
-          onBlur={checkEmail}
-          className={emailcheck ? "trueEmail" : "falseEmail"}
-        />
-        <button className="emailbtn" onClick={sendCode}>
-          이메일 인증
-        </button>
-        <div>
-          {certify ? (
-            <input
-              className="Registerinput"
-              value={certifycode}
-              placeholder="인증코드 입력"
-              onChange={(e) => setSertifycode(e.target.value)}
-            />
-          ) : (
-            ""
-          )}
+      <div className="register">
+        <div className="backbtncontainer">
+          <SlArrowLeft />
+          <Link to="/Login">
+            <button className="backbtn">뒤로가기</button>
+          </Link>
         </div>
-        <div className="emailbtn">
-          {certify ? <button className="emailbtn">코드 인증</button> : ""}
+        <h1 className="registertitle">회원가입</h1>
+        <div className="content">
+        <div className="flexbox">
+          <input
+            type="email"
+            value={email}
+            placeholder="이메일(아이디)"
+            onChange={(e) => setEmail(e.target.value)}
+            onBlur={checkEmail}
+            className={emailcheck ? "trueEmail" : "falseEmail"}
+          />
+          <button className="emailbtn" onClick={sendCode}>
+            이메일 인증
+          </button>
+          <div>
+            {certify ? (
+              <input
+                className="Registerinput"
+                value={certifycode}
+                placeholder="인증코드 입력"
+                onChange={(e) => setSertifycode(e.target.value)}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="emailbtn">
+            {certify ? <button className="emailbtn">코드 인증</button> : ""}
+          </div>
+          <input
+            className="Registerinput"
+            type="password"
+            value={password}
+            placeholder="비밀번호"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            className="Registerinput"
+            value={username}
+            placeholder="닉네임"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          </div>
+          <button className="registerbtn" onClick={checkApi}>
+            회원가입
+          </button>
         </div>
-        <input
-          className="Registerinput"
-          type="password"
-          value={password}
-          placeholder="비밀번호"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input
-          className="Registerinput"
-          value={username}
-          placeholder="닉네임"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <button className="registerbtn" onClick={checkApi}>
-          회원가입
-        </button>
       </div>
     </>
   );
