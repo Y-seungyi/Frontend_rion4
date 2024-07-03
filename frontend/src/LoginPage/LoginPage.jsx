@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./LoginPage.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { SlArrowLeft } from "react-icons/sl";
+
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -26,6 +28,12 @@ function LoginPage() {
   return (
     <>
       <div className="loginbox">
+      <div className="backbtncontainer">
+          <SlArrowLeft />
+          <Link to="/">
+            <button className="backbtn">뒤로가기</button>
+          </Link>
+        </div>
         <h1 className="logintitle">로그인</h1>
         <div className="flexbox">
           <input
