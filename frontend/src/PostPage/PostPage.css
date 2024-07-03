@@ -1,0 +1,102 @@
+body, html {
+    margin: 0;
+    background-color: #e9e9e9;
+    font-family: "nanumSQ";
+}
+
+.topContent, .bottomContent {
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    background-color: #ffffff;
+    font-size: 16px;
+    width: 60%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.bottomContent {
+    height: calc(100vh - 165px);
+    overflow: auto;
+}
+
+.bottomContent * {
+    margin: 5px;
+}
+
+.title {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 5px;
+}
+
+.user, .date, .view {
+    display: inline-block;
+    color: #595959;
+    font-size: 16px;
+    margin: 5px 5px 5px 30px;
+}
+
+.userIcon, .dateIcon, .viewIcon {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 1px;
+}
+
+.edit, .delete {
+    position: absolute;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #98D788;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.edit:hover,
+.delete:hover {
+    transform: scale(1.05)
+}
+
+.editIcon, .deleteIcon {
+    margin-top: 2.5px;
+    margin-left: 2.5px;
+}
+
+.delete {
+    background-color: #ff7a7a;
+    margin-left: 30px;
+}
+
+.like {
+    position: absolute;
+    right: calc(20% + 10px);
+    top: 105px;
+    /* background-color: red; */
+    width: auto;
+    padding: 5px 10px 5px 30px;
+    border-radius: 10px;
+    box-shadow: #ff7a7a 0px 0px 0px 3px inset;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.like:hover {
+    background-color: #ff7a7a;
+    color: white;
+    font-weight: bold;
+}
+
+.likeIcon {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 1px;
+}
+
+@font-face {
+    font-family: "nanumSQ";
+    src: url("../assets/NanumSquareNeo-bRg.ttf");
+}

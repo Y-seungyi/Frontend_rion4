@@ -52,7 +52,7 @@ const MainPage = () => {
   };
 
   const handleRowClick = (id) => {
-    navigate(`/detail/${id}`);
+    navigate(`/post/${id}`);
   };
 
   return (
